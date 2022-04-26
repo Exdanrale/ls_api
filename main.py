@@ -50,10 +50,6 @@ def find_closest_sheets(question, descriptions_encodings, titles_encodings, url_
 
 app = FastAPI()
 
-@app.get('/')
-async def root():
-    return {'hello': 'world'}
-
 @app.post("/question/")
 async def search_engine(question: str) :
     return find_closest_sheets(question, descriptions_encodings, titles_encodings, df, 3)
